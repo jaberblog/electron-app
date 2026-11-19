@@ -1,0 +1,43 @@
+{
+  "name": "my-electron-app",
+  "productName": "MyApp",
+  "version": "1.0.0",
+  "description": "اپ ساده ویندوز با الکترون",
+  "author": "Jaber",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.jaber.myapp",
+    "productName": "MyApp",
+    "files": [
+      "main.js",
+      "index.html",
+      "style.css",
+      "renderer.js"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}.${ext}"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>کارهای من</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>کارهای من</h1>
+      <p id="summary" class="summary"></p>
+    </header>
+
+    <form id="add-form" class="add">
+      <input id="task-input" type="text" placeholder="کار جدید را بنویس…" autocomplete="off" maxlength="200">
+      <button type="submit">افزودن کار</button>
+    </form>
+
+    <div class="filters" role="tablist" aria-label="فیلتر کارها">
+      <button class="filter active" data-filter="all" role="tab">همه</button>
+      <button class="filter" data-filter="active" role="tab">باقی‌مانده</button>
+      <button class="filter" data-filter="done" role="tab">انجام‌شده</button>
+      <button id="clear-done" class="clear" type="button">پاک کردن انجام‌شده‌ها</button>
+    </div>
+
+    <ul id="list" class="list"></ul>
+    <p id="empty" class="empty" hidden></p>
+  </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
